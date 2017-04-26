@@ -37,7 +37,7 @@
         <h3><a href="{%url "music_detail" id=c.id %}">{{c.song}}</h3></a>
         <ol>
         <li>Music Title : {{c.music_title}}</li>
-        <li>Genre :<a href="{%url "music_list" %}">{{c.genre}}</a></li>
+        <li>Genre :<a href="{% url "music_list" %}">{{c.genre}}</a></li>
         <li>Rating : {{c.rating}}</li>
         </ol>
 
