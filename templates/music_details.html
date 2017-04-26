@@ -1,0 +1,23 @@
+{% extends 'music_base.html' %}
+{% block head_title %}{{instance.title}} | {{block.super}}{% endblock head_title %}
+
+<div class="col-sm-6 col-sm-offset-3">
+
+{% block content %}
+<h1>{{instance.music_title}}</h1>
+<p>{{instance.slug}}</p>
+<p>Genre:{{instance.genre}}</p>
+<p>Rating:{{instance.rating}}</p>
+<p><a href="{%url "music_delete" id=instance.id %}" class="btn btn-primary" role="button">Delete</a></p>
+<p><a href="api/{{instance.id}}/remove" class="btn btn-primary" role="button">Delete with REST</a></p>
+
+
+
+</script>
+
+
+{% endblock %}
+
+
+
+</div>

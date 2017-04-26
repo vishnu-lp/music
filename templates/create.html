@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% if messages %}
+<div class="message">
+<ul class="messages">
+{% for message in messages %}
+<li{% if message.tags %} class="{{message.tags}}"{% endif %}>{% if "html_safe" in message.tags %}{{message|safe}}{%else%}{{message}}{%endif%}</li>	
+{% endfor %}
+
+</ul>
+</div>
+{% endif %}
+
+
+{%block content %}
+<form method="POST">{%csrf_token%}
+
+{{form.as_p}}
+<input type='submit' class="btn btn-primary" value='Submit Values'/>
+<a href="{%url "list" %}" class="btn btn-primary">Go back</a>"
+</form>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+<!--DOCTYPE html-->
+<html>
+
+<body>
+<div class="container">
+{% block content %}
+{%for c in instance %}
+<h3><a href="{%url "detail" id=c.id %}">{{c.genre}}</a></h3>
+<p>{{c.slug}}</p>
+<p>{{c.desc}}</p>
+<form method="GET" action="/music/edit/{{c.id}}">
+<input type="submit" value="Update Form">
+</form>
+{% endfor %}
+</div>
+<form action='/music/create' method="GET">
+<input type="submit" value="Create new Genre">
+</form>
+{% endblock %}
+</body>
+</html> 
